@@ -1,7 +1,9 @@
 package api;
 
-public class IsaksApi {
+import trulscraft.Loader;
+
+public class IsaksApi extends Loader {
 
 	public ConfigAPI config = ConfigAPI.getInstance();
-	
+
 }

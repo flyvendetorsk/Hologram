@@ -1,0 +1,12 @@
+#Høyere = Performence
+Hologram_Update-Sekunder: 20
+
+holograms:
+  hologram1:
+    x: 0.5
+    y: 70
+    z: 0.5
+    worldname: world
+    lines:
+      - '&cEn linje'
+      - '&8En annen linje'
