@@ -1,6 +1,7 @@
 package trulscraft;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import api.IsaksApi;
 
@@ -17,13 +18,19 @@ public class Hologram_Handler extends IsaksApi {
 	}
 
 	public void addLine(String name, int line, String linestring) {
-		
+		if (isHologramNameTaken(name)) {
+			List<String> lines = config.getConfig().getStringList("holograms." + name + ".lines");
+			lines.add(linestring);
+
+			config.getConfig().set("holograms." + name + ".lines", lines);
+			config.saveConfig();
+		}
 	}
-	
-	public void removeLine() {
-		
+
+	public void removeLine(String name, int line) {
+
 	}
-	
+
 	public void addHologram(String name, double x, double y, double z, String world, String line) {
 		ArrayList<String> lines = new ArrayList<>();
 		lines.add(line);
